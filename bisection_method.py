@@ -171,7 +171,7 @@ def find_all_roots(f, a, b, tol=1e-6):
     Group: Avishag Tamssut id-326275609
             Merav Hashta id-214718405
             Sahar Emmuna id-213431133
-    Git: https://github.com/MeravBest/Quiz2.git
+    Git: https://github.com/MeravBest/quiz2Shlomooo.git
     Name: Merav Hashta 214718405
 """
 
