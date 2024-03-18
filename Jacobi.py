@@ -259,29 +259,43 @@ def G_norm(matrix):
 
 if __name__ == "__main__":
     """"
-       Date: 18/3/24
-       Group: Avishag Tamssut id-326275609
-               Merav Hashta id-214718405
-               Sahar Emmuna id-213431133
-       Git: 
-       Name: Avishag Tamssut 326275609
-       """
+        Date: 18/3/24
+        Group: Avishag Tamssut id-326275609
+                Merav Hashta id-214718405
+                Sahar Emmuna id-213431133
+        Git: https://github.com/MeravBest/quiz2Shlomooo.git
+        Name: Merav Hashta 214718405
+    """
 
-    A = np.array([[3, -1, 1], [0, 1, -1], [1, 1, -2]])
-    b = np.array([4, -1, -3])
+    A = np.array([[-1, 1, 3, -3, 1],
+                  [3, -3, -4, 2, 3],
+                  [2, 1, -5, -3, 5],
+                  [-5, -6, 4, 1, 3],
+                  [3, -2, -2, -3, 5]])
+    b = np.array([[3],
+                  [8],
+                  [2],
+                  [14],
+                  [6]])
 
     x = np.zeros_like(b, dtype=np.double)
     solution = jacobi_iterative(A, b, x)
 
     print(bcolors.OKBLUE,"\nApproximate solution:", solution, bcolors.ENDC)
     #----------------------------us-----------------------------
-    A = np.array([[5, 1, 2],
-                  [1, 6, 4],
-                  [0, 3, 8]])
-    b = np.array([[1],
+    A = np.array([[-1, 1, 3, -3, 1],
+                  [3, -3, -4, 2, 3],
+                  [2, 1, -5, -3, 5],
+                  [-5, -6, 4, 1, 3],
+                  [3, -2, -2, -3, 5]])
+    b = np.array([[3],
+                  [8],
                   [2],
-                  [3]])
+                  [14],
+                  [6]])
     Xr = np.array([[0],
+                   [0],
+                   [0],
                    [0],
                    [0]])
 

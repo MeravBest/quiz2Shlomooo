@@ -79,10 +79,11 @@ def backward_substitution(mat):
 
 if __name__ == '__main__':
 
-    A_b = [[1, -1, 2, -1, -8],
-        [2, -2, 3, -3, -20],
-        [1, 1, 1, 0, -2],
-        [1, -1, 4, 3, 4]]
+    A_b = [[-1, 1, 3, -3, 1, 3],
+            [3, -3, -4, 2, 3, 8],
+            [2, 1, -5, -3, 5, 2],
+            [-5, -6, 4, 1, 3, 14],
+            [3, -2, -2, -3, 5, 6]]
 
     result = gaussianElimination(A_b)
     if isinstance(result, str):

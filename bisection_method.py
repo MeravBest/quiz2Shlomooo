@@ -176,11 +176,11 @@ def find_all_roots(f, a, b, tol=1e-6):
 """
 
 if __name__ == '__main__':
-    f = lambda x: x**2 - 4
+    f = lambda x: 1 * x**3 + 2 * x**2 - 5 * x + 4
 
     # Adjust the interval to avoid the singularity
-    a = -2
-    b = 5
+    a = -4
+    b = 0
 
     roots = find_all_roots(f, a, b)
     print(bcolors.OKBLUE, f"\nThe equation f(x) has approximate roots at {roots}", bcolors.ENDC)

@@ -249,40 +249,52 @@ def G_norm(matrix):
 
 if __name__ == '__main__':
 
-    A = np.array([[3, -1, 1], [0, 1, -1], [1, 1, -2]])
-    b = np.array([4, -1, -3])
-    X0 = np.zeros_like(b)
 
-    solution =gauss_seidel(A, b, X0)
-    print(bcolors.OKBLUE,"\nApproximate solution:", solution, bcolors.ENDC)
     #--------------------------us------------------------- iterative
-    A = np.array([[5, 1, 2],
-                  [1, 6, 4],
-                  [0, 3, 8]])
-    b = np.array([[1],
+    #A = np.array([[-1, 1, 3, -3, 1],
+     #             [3, -3, -4, 2, 3],
+      #            [2, 1, -5, -3, 5],
+       #           [-5, -6, 4, 1, 3],
+        #          [3, -2, -2, -3, 5]])
+    A = np.array([[3, -3, -4, 2, 3],
+                  [-1, 1, 3, -3, 1],
+                  [-5, -6, 4, 1, 3],
+                  [2, 1, -5, -3, 5],
+                  [3, -2, -2, -3, 5]])
+    b = np.array([[8],
+                  [3],
+                  [14],
                   [2],
-                  [3]])
+                  [6]])
+
     Xr = np.array([[0],
+                   [0],
+                   [0],
                    [0],
                    [0]])
 
+    X0 = np.zeros_like(b)
+
+
+    solution = gauss_seidel(A, b, X0)
+    print(bcolors.OKBLUE, "\nApproximate solution:", solution, bcolors.ENDC)
     gauss_GH(A)
 
-if is_diagonally_dominant(A):
-    while True:
-        Xr_plus_1 = np.array(gauss_Ait(A, Xr, b))
-        if not np.any(np.abs(Xr - Xr_plus_1) > 0.001):
-            # print(Xr_plus_1)
-            break
-        Xr = Xr_plus_1.copy()
-else:
-    print("The diagonal in the matrix is not dominant and therefore the iterative methods will not converge")
+    if is_diagonally_dominant(A):
+        while True:
+            Xr_plus_1 = np.array(gauss_Ait(A, Xr, b))
+            if not np.any(np.abs(Xr - Xr_plus_1) > 0.001):
+                # print(Xr_plus_1)
+                break
+            Xr = Xr_plus_1.copy()
+    else:
+        print("The diagonal in the matrix is not dominant and therefore the iterative methods will not converge")
 
-print(bcolors.OKBLUE, "guess sidel solution:\n", bcolors.ENDC + str(Xr) + "\n")
+    print(bcolors.OKBLUE, "guess sidel solution:\n", bcolors.ENDC + str(Xr) + "\n")
 
 
-if(G_norm(A)):
-     print("condition for convergence is met ")
-else:
-    print("No convergence condition is met")
+    if(G_norm(A)):
+         print("condition for convergence is met ")
+    else:
+        print("No convergence condition is met")
 
